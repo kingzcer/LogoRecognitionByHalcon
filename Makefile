@@ -220,6 +220,7 @@ Makefile: LogoRecognitionByHalcon.pro D:\Qt\Qt5.8.0\5.8\msvc2015_64\mkspecs\win3
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\mkspecs\features\qt_config.prf \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\mkspecs\win32-msvc2015\qmake.conf \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\mkspecs\features\spec_post.prf \
+		.qmake.stash \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\mkspecs\features\exclusive_builds.prf \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\mkspecs\features\toolchain.prf \
 		D:\Qt\Qt5.8.0\5.8\msvc2015_64\mkspecs\features\default_pre.prf \
@@ -395,6 +396,7 @@ D:\Qt\Qt5.8.0\5.8\msvc2015_64\mkspecs\features\qt_functions.prf:
 D:\Qt\Qt5.8.0\5.8\msvc2015_64\mkspecs\features\qt_config.prf:
 D:\Qt\Qt5.8.0\5.8\msvc2015_64\mkspecs\win32-msvc2015\qmake.conf:
 D:\Qt\Qt5.8.0\5.8\msvc2015_64\mkspecs\features\spec_post.prf:
+.qmake.stash:
 D:\Qt\Qt5.8.0\5.8\msvc2015_64\mkspecs\features\exclusive_builds.prf:
 D:\Qt\Qt5.8.0\5.8\msvc2015_64\mkspecs\features\toolchain.prf:
 D:\Qt\Qt5.8.0\5.8\msvc2015_64\mkspecs\features\default_pre.prf:

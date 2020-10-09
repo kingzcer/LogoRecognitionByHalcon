@@ -33,9 +33,17 @@ LIBS += D:\MVTec\HALCON-17.12-Progress\lib\x64-win64\*.lib
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    halconcv.cpp
+    halconcv.cpp \
+    scaledshapemodel.cpp \
+    findinfolder.cpp \
+    findincamera.cpp \
+    imageproc.cpp
 
 HEADERS  += mainwindow.h \
-    halconcv.h
+    halconcv.h \
+    scaledshapemodel.h \
+    findinfolder.h \
+    findincamera.h \
+    imageproc.h
 
 FORMS    += mainwindow.ui

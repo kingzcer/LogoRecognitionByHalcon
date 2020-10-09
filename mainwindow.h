@@ -8,6 +8,8 @@
 #include <QGraphicsPixmapItem>
 #include <QResizeEvent>
 #include <QTimer>
+#include <imageproc.h>
+#include <findinfolder.h>
 
 namespace Ui {
 class MainWindow;
@@ -25,28 +27,23 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    std::vector<cv::RotatedRect> findScaledShapeModel(cv::Mat src);
-    void createScaledShapeModel(cv::Mat model);
-    void drawRotatedRect(cv::RotatedRect rect, cv::Mat src);
 
     void display(cv::Mat src);
-
-    void resizeEvent(QResizeEvent *event);
     cv::Mat m_frame;
 
 private:
     Ui::MainWindow *ui;
-    HTuple  hv_ModelID;
-    int model_width;
-    int model_height;
-
     QGraphicsView *m_view;
     QGraphicsScene *m_scene;
 
     QTimer *m_timer;
+    FindInFolder *m_finder;
 
 public slots:
     void on_timeout();
+    void progress(double p);
+private slots:
+    void on_action_chooseFolder_triggered();
 };
 
 #endif // MAINWINDOW_H

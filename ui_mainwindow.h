@@ -17,6 +17,7 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
@@ -27,10 +28,12 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
+    QAction *action_chooseFolder;
     QWidget *centralWidget;
     QHBoxLayout *horizontalLayout;
     QGraphicsView *graphicsView;
     QMenuBar *menuBar;
+    QMenu *menu;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -39,6 +42,8 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->resize(686, 647);
+        action_chooseFolder = new QAction(MainWindow);
+        action_chooseFolder->setObjectName(QStringLiteral("action_chooseFolder"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         horizontalLayout = new QHBoxLayout(centralWidget);
@@ -54,6 +59,8 @@ public:
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
         menuBar->setGeometry(QRect(0, 0, 686, 23));
+        menu = new QMenu(menuBar);
+        menu->setObjectName(QStringLiteral("menu"));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -61,6 +68,9 @@ public:
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         MainWindow->setStatusBar(statusBar);
+
+        menuBar->addAction(menu->menuAction());
+        menu->addAction(action_chooseFolder);
 
         retranslateUi(MainWindow);
 
@@ -70,6 +80,8 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
+        action_chooseFolder->setText(QApplication::translate("MainWindow", "\351\200\211\346\213\251\346\226\207\344\273\266\345\244\271", Q_NULLPTR));
+        menu->setTitle(QApplication::translate("MainWindow", "\346\226\207\344\273\266", Q_NULLPTR));
     } // retranslateUi
 
 };
